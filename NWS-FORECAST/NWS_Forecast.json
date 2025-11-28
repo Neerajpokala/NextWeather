@@ -1,0 +1,685 @@
+{
+  "api_name": "National Weather Service API - Forecast Test URLs",
+  "base_url": "https://api.weather.gov",
+  "note": "Copy any URL below and paste in your browser to test the API. Remember to include User-Agent header in your code!",
+  "test_urls_by_endpoint": [
+    {
+      "endpoint": "1. Get Point Metadata (FIRST STEP)",
+      "description": "Convert latitude/longitude to forecast grid coordinates - USE THIS FIRST",
+      "urls": [
+        {
+          "location": "Kansas City, MO",
+          "coordinates": "39.0997,-94.5786",
+          "url": "https://api.weather.gov/points/39.0997,-94.5786",
+          "description": "Kansas City - Returns gridId: EAX, gridX: 39, gridY: 101"
+        },
+        {
+          "location": "New York City, NY",
+          "coordinates": "40.7128,-74.0060",
+          "url": "https://api.weather.gov/points/40.7128,-74.0060",
+          "description": "NYC - Returns gridId: OKX with grid coordinates"
+        },
+        {
+          "location": "Houston, TX",
+          "coordinates": "29.7604,-95.3698",
+          "url": "https://api.weather.gov/points/29.7604,-95.3698",
+          "description": "Houston - Returns gridId: HGX with grid coordinates"
+        },
+        {
+          "location": "Los Angeles, CA",
+          "coordinates": "34.0522,-118.2437",
+          "url": "https://api.weather.gov/points/34.0522,-118.2437",
+          "description": "Los Angeles - Returns gridId: LOX with grid coordinates"
+        },
+        {
+          "location": "Chicago, IL",
+          "coordinates": "41.8781,-87.6298",
+          "url": "https://api.weather.gov/points/41.8781,-87.6298",
+          "description": "Chicago - Returns gridId: LOT with grid coordinates"
+        },
+        {
+          "location": "Miami, FL",
+          "coordinates": "25.7617,-80.1918",
+          "url": "https://api.weather.gov/points/25.7617,-80.1918",
+          "description": "Miami - Returns gridId: MFL with grid coordinates"
+        },
+        {
+          "location": "Seattle, WA",
+          "coordinates": "47.6062,-122.3321",
+          "url": "https://api.weather.gov/points/47.6062,-122.3321",
+          "description": "Seattle - Returns gridId: SEW with grid coordinates"
+        },
+        {
+          "location": "Phoenix, AZ",
+          "coordinates": "33.4484,-112.0740",
+          "url": "https://api.weather.gov/points/33.4484,-112.0740",
+          "description": "Phoenix - Returns gridId: PSR with grid coordinates"
+        },
+        {
+          "location": "Denver, CO",
+          "coordinates": "39.7392,-104.9903",
+          "url": "https://api.weather.gov/points/39.7392,-104.9903",
+          "description": "Denver - Returns gridId: BOU with grid coordinates"
+        },
+        {
+          "location": "Boston, MA",
+          "coordinates": "42.3601,-71.0589",
+          "url": "https://api.weather.gov/points/42.3601,-71.0589",
+          "description": "Boston - Returns gridId: BOX with grid coordinates"
+        }
+      ]
+    },
+    {
+      "endpoint": "2. Get 12-Hour Forecast (7-Day Forecast)",
+      "description": "Human-readable forecast with day/night periods - USE AFTER getting grid coordinates",
+      "urls": [
+        {
+          "location": "Kansas City, MO (EAX 39,101)",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast",
+          "description": "7-day forecast with 12-hour periods (day/night)"
+        },
+        {
+          "location": "New York City, NY (OKX 33,37)",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast",
+          "description": "NYC 7-day forecast"
+        },
+        {
+          "location": "Houston, TX (HGX 76,106)",
+          "url": "https://api.weather.gov/gridpoints/HGX/76,106/forecast",
+          "description": "Houston 7-day forecast"
+        },
+        {
+          "location": "Los Angeles, CA (LOX 154,45)",
+          "url": "https://api.weather.gov/gridpoints/LOX/154,45/forecast",
+          "description": "Los Angeles 7-day forecast"
+        },
+        {
+          "location": "Chicago, IL (LOT 75,73)",
+          "url": "https://api.weather.gov/gridpoints/LOT/75,73/forecast",
+          "description": "Chicago 7-day forecast"
+        },
+        {
+          "location": "Miami, FL (MFL 110,28)",
+          "url": "https://api.weather.gov/gridpoints/MFL/110,28/forecast",
+          "description": "Miami 7-day forecast"
+        },
+        {
+          "location": "Seattle, WA (SEW 124,67)",
+          "url": "https://api.weather.gov/gridpoints/SEW/124,67/forecast",
+          "description": "Seattle 7-day forecast"
+        },
+        {
+          "location": "Phoenix, AZ (PSR 156,77)",
+          "url": "https://api.weather.gov/gridpoints/PSR/156,77/forecast",
+          "description": "Phoenix 7-day forecast"
+        }
+      ]
+    },
+    {
+      "endpoint": "3. Get 12-Hour Forecast with Units Parameter",
+      "description": "Get forecast in US customary (Fahrenheit) or SI (Celsius) units",
+      "urls": [
+        {
+          "units": "US (Fahrenheit, mph)",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast?units=us",
+          "description": "Kansas City forecast in Fahrenheit and mph (default)"
+        },
+        {
+          "units": "SI (Celsius, km/h)",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast?units=si",
+          "description": "Kansas City forecast in Celsius and km/h (metric)"
+        },
+        {
+          "units": "SI for NYC",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast?units=si",
+          "description": "NYC forecast in metric units"
+        }
+      ]
+    },
+    {
+      "endpoint": "4. Get Hourly Forecast",
+      "description": "Hour-by-hour forecast (typically 156 hours / 6.5 days)",
+      "urls": [
+        {
+          "location": "Kansas City, MO",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast/hourly",
+          "description": "Hourly forecast with temperature, wind, humidity for each hour"
+        },
+        {
+          "location": "New York City, NY",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast/hourly",
+          "description": "NYC hourly forecast"
+        },
+        {
+          "location": "Houston, TX",
+          "url": "https://api.weather.gov/gridpoints/HGX/76,106/forecast/hourly",
+          "description": "Houston hourly forecast"
+        },
+        {
+          "location": "Los Angeles, CA",
+          "url": "https://api.weather.gov/gridpoints/LOX/154,45/forecast/hourly",
+          "description": "LA hourly forecast"
+        },
+        {
+          "location": "Chicago, IL",
+          "url": "https://api.weather.gov/gridpoints/LOT/75,73/forecast/hourly",
+          "description": "Chicago hourly forecast"
+        }
+      ]
+    },
+    {
+      "endpoint": "5. Get Hourly Forecast with Units",
+      "description": "Hourly forecast in different units",
+      "urls": [
+        {
+          "units": "US units",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast/hourly?units=us",
+          "description": "Kansas City hourly in Fahrenheit"
+        },
+        {
+          "units": "SI units",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast/hourly?units=si",
+          "description": "Kansas City hourly in Celsius"
+        }
+      ]
+    },
+    {
+      "endpoint": "6. Get Raw Gridpoint Data (50+ Parameters)",
+      "description": "Raw numerical forecast data with temperature, wind, precipitation, hazards, and more",
+      "urls": [
+        {
+          "location": "Kansas City, MO",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101",
+          "description": "Complete raw data: temp, dewpoint, humidity, wind, precip, snow, hazards, etc."
+        },
+        {
+          "location": "New York City, NY",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37",
+          "description": "NYC raw gridpoint data"
+        },
+        {
+          "location": "Houston, TX",
+          "url": "https://api.weather.gov/gridpoints/HGX/76,106",
+          "description": "Houston raw gridpoint data"
+        },
+        {
+          "location": "Los Angeles, CA",
+          "url": "https://api.weather.gov/gridpoints/LOX/154,45",
+          "description": "LA raw gridpoint data"
+        },
+        {
+          "location": "Denver, CO (winter weather)",
+          "url": "https://api.weather.gov/gridpoints/BOU/62,61",
+          "description": "Denver raw data (includes snow/ice parameters)"
+        },
+        {
+          "location": "Miami, FL (tropical)",
+          "url": "https://api.weather.gov/gridpoints/MFL/110,28",
+          "description": "Miami raw data (includes tropical storm wind probabilities)"
+        }
+      ]
+    },
+    {
+      "endpoint": "7. Get Observation Stations for Gridpoint",
+      "description": "Find nearby weather stations for current conditions",
+      "urls": [
+        {
+          "location": "Kansas City area",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/stations",
+          "description": "List of observation stations near Kansas City"
+        },
+        {
+          "location": "New York City area",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37/stations",
+          "description": "List of observation stations near NYC"
+        },
+        {
+          "location": "Houston area",
+          "url": "https://api.weather.gov/gridpoints/HGX/76,106/stations",
+          "description": "List of observation stations near Houston"
+        },
+        {
+          "location": "Chicago area (limited results)",
+          "url": "https://api.weather.gov/gridpoints/LOT/75,73/stations?limit=5",
+          "description": "First 5 stations near Chicago"
+        }
+      ]
+    },
+    {
+      "endpoint": "8. Get Latest Observation (Current Conditions)",
+      "description": "Get current weather conditions from a specific station",
+      "urls": [
+        {
+          "station": "KMCI - Kansas City International",
+          "url": "https://api.weather.gov/stations/KMCI/observations/latest",
+          "description": "Current conditions at Kansas City airport"
+        },
+        {
+          "station": "KJFK - JFK Airport, New York",
+          "url": "https://api.weather.gov/stations/KJFK/observations/latest",
+          "description": "Current conditions at JFK airport"
+        },
+        {
+          "station": "KIAH - Houston Bush Intercontinental",
+          "url": "https://api.weather.gov/stations/KIAH/observations/latest",
+          "description": "Current conditions at Houston airport"
+        },
+        {
+          "station": "KLAX - Los Angeles International",
+          "url": "https://api.weather.gov/stations/KLAX/observations/latest",
+          "description": "Current conditions at LAX"
+        },
+        {
+          "station": "KORD - Chicago O'Hare",
+          "url": "https://api.weather.gov/stations/KORD/observations/latest",
+          "description": "Current conditions at O'Hare airport"
+        },
+        {
+          "station": "KMIA - Miami International",
+          "url": "https://api.weather.gov/stations/KMIA/observations/latest",
+          "description": "Current conditions at Miami airport"
+        },
+        {
+          "station": "KSEA - Seattle-Tacoma",
+          "url": "https://api.weather.gov/stations/KSEA/observations/latest",
+          "description": "Current conditions at Seattle airport"
+        },
+        {
+          "station": "KDEN - Denver International",
+          "url": "https://api.weather.gov/stations/KDEN/observations/latest",
+          "description": "Current conditions at Denver airport"
+        },
+        {
+          "station": "KPHX - Phoenix Sky Harbor",
+          "url": "https://api.weather.gov/stations/KPHX/observations/latest",
+          "description": "Current conditions at Phoenix airport"
+        },
+        {
+          "station": "KBOS - Boston Logan",
+          "url": "https://api.weather.gov/stations/KBOS/observations/latest",
+          "description": "Current conditions at Boston airport"
+        }
+      ]
+    },
+    {
+      "endpoint": "9. Get Historical Observations",
+      "description": "Get observations for a time range (last 24 hours shown here)",
+      "urls": [
+        {
+          "station": "KMCI - Kansas City (last 24 hours)",
+          "url": "https://api.weather.gov/stations/KMCI/observations?start=2025-11-23T00:00:00Z&end=2025-11-24T23:59:59Z",
+          "description": "Past 24 hours of observations from Kansas City"
+        },
+        {
+          "station": "KJFK - New York (last 12 hours)",
+          "url": "https://api.weather.gov/stations/KJFK/observations?start=2025-11-24T12:00:00Z&limit=12",
+          "description": "Last 12 hours at JFK"
+        },
+        {
+          "station": "KIAH - Houston (limited to 10)",
+          "url": "https://api.weather.gov/stations/KIAH/observations?limit=10",
+          "description": "Last 10 observations from Houston"
+        }
+      ]
+    },
+    {
+      "endpoint": "10. Search Observation Stations",
+      "description": "Find observation stations by state or ID",
+      "urls": [
+        {
+          "filter": "All stations in Texas",
+          "url": "https://api.weather.gov/stations?state=TX&limit=20",
+          "description": "First 20 weather stations in Texas"
+        },
+        {
+          "filter": "All stations in California",
+          "url": "https://api.weather.gov/stations?state=CA&limit=20",
+          "description": "First 20 weather stations in California"
+        },
+        {
+          "filter": "All stations in Florida",
+          "url": "https://api.weather.gov/stations?state=FL&limit=20",
+          "description": "First 20 weather stations in Florida"
+        },
+        {
+          "filter": "All stations in Kansas",
+          "url": "https://api.weather.gov/stations?state=KS",
+          "description": "All weather stations in Kansas"
+        },
+        {
+          "filter": "Specific station IDs",
+          "url": "https://api.weather.gov/stations?id=KMCI,KJFK,KLAX",
+          "description": "Get info for Kansas City, JFK, and LAX stations"
+        }
+      ]
+    },
+    {
+      "endpoint": "11. Get Station Metadata",
+      "description": "Get detailed information about a specific weather station",
+      "urls": [
+        {
+          "station": "KMCI - Kansas City",
+          "url": "https://api.weather.gov/stations/KMCI",
+          "description": "Full metadata for Kansas City airport station"
+        },
+        {
+          "station": "KJFK - JFK Airport",
+          "url": "https://api.weather.gov/stations/KJFK",
+          "description": "Full metadata for JFK airport station"
+        },
+        {
+          "station": "KLAX - LAX",
+          "url": "https://api.weather.gov/stations/KLAX",
+          "description": "Full metadata for LAX station"
+        }
+      ]
+    },
+    {
+      "endpoint": "12. Get Zone Forecast",
+      "description": "Get zone-based forecast (alternative to gridpoint forecast)",
+      "urls": [
+        {
+          "zone": "KSZ027 - Johnson County, Kansas",
+          "url": "https://api.weather.gov/zones/forecast/KSZ027/forecast",
+          "description": "Zone forecast for Johnson County, KS"
+        },
+        {
+          "zone": "TXZ119 - Dallas County, Texas",
+          "url": "https://api.weather.gov/zones/forecast/TXZ119/forecast",
+          "description": "Zone forecast for Dallas County, TX"
+        },
+        {
+          "zone": "NYZ072 - New York (Manhattan)",
+          "url": "https://api.weather.gov/zones/forecast/NYZ072/forecast",
+          "description": "Zone forecast for Manhattan, NY"
+        },
+        {
+          "zone": "CAZ041 - Los Angeles County Coast",
+          "url": "https://api.weather.gov/zones/forecast/CAZ041/forecast",
+          "description": "Zone forecast for LA County coast"
+        }
+      ]
+    },
+    {
+      "endpoint": "13. List Zones by Type",
+      "description": "Get all zones of a specific type",
+      "urls": [
+        {
+          "type": "Forecast zones in Kansas",
+          "url": "https://api.weather.gov/zones/forecast?area=KS",
+          "description": "All forecast zones in Kansas"
+        },
+        {
+          "type": "Forecast zones in Texas (limited)",
+          "url": "https://api.weather.gov/zones/forecast?area=TX&limit=20",
+          "description": "First 20 forecast zones in Texas"
+        },
+        {
+          "type": "Fire weather zones in California",
+          "url": "https://api.weather.gov/zones/fire?area=CA&limit=20",
+          "description": "First 20 fire zones in California"
+        },
+        {
+          "type": "Marine zones in Gulf of Mexico",
+          "url": "https://api.weather.gov/zones/marine?region=GM&limit=20",
+          "description": "First 20 marine zones in Gulf of Mexico"
+        },
+        {
+          "type": "County zones in Florida",
+          "url": "https://api.weather.gov/zones/county?area=FL&limit=20",
+          "description": "First 20 county zones in Florida"
+        }
+      ]
+    },
+    {
+      "endpoint": "14. Get Zone Metadata",
+      "description": "Get detailed information about a specific zone",
+      "urls": [
+        {
+          "zone": "KSZ027 - Johnson County, KS",
+          "url": "https://api.weather.gov/zones/forecast/KSZ027",
+          "description": "Metadata for Johnson County forecast zone"
+        },
+        {
+          "zone": "TXZ119 - Dallas County, TX",
+          "url": "https://api.weather.gov/zones/forecast/TXZ119",
+          "description": "Metadata for Dallas County forecast zone"
+        },
+        {
+          "zone": "NYZ072 - Manhattan, NY",
+          "url": "https://api.weather.gov/zones/forecast/NYZ072",
+          "description": "Metadata for Manhattan forecast zone"
+        }
+      ]
+    },
+    {
+      "endpoint": "15. Find Zones by Point",
+      "description": "Find which zones contain a specific latitude/longitude",
+      "urls": [
+        {
+          "location": "Kansas City coordinates",
+          "url": "https://api.weather.gov/zones/forecast?point=39.0997,-94.5786",
+          "description": "Find forecast zones containing Kansas City"
+        },
+        {
+          "location": "NYC coordinates",
+          "url": "https://api.weather.gov/zones/forecast?point=40.7128,-74.0060",
+          "description": "Find forecast zones containing New York City"
+        },
+        {
+          "location": "Houston coordinates - all zone types",
+          "url": "https://api.weather.gov/zones?point=29.7604,-95.3698",
+          "description": "Find ALL zone types (forecast, county, fire) containing Houston"
+        }
+      ]
+    }
+  ],
+  "complete_workflow_examples": [
+    {
+      "example": "Get complete forecast for Kansas City, MO",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Get grid coordinates from lat/lon",
+          "url": "https://api.weather.gov/points/39.0997,-94.5786",
+          "extract": "gridId: EAX, gridX: 39, gridY: 101"
+        },
+        {
+          "step": 2,
+          "action": "Get 7-day forecast",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast"
+        },
+        {
+          "step": 3,
+          "action": "Get hourly forecast",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast/hourly"
+        },
+        {
+          "step": 4,
+          "action": "Get nearby stations",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/stations",
+          "extract": "stationId: KMCI (closest)"
+        },
+        {
+          "step": 5,
+          "action": "Get current conditions",
+          "url": "https://api.weather.gov/stations/KMCI/observations/latest"
+        }
+      ]
+    },
+    {
+      "example": "Get forecast for New York City in metric units",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Get grid coordinates",
+          "url": "https://api.weather.gov/points/40.7128,-74.0060",
+          "extract": "gridId: OKX, gridX: 33, gridY: 37"
+        },
+        {
+          "step": 2,
+          "action": "Get 7-day forecast in Celsius",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast?units=si"
+        },
+        {
+          "step": 3,
+          "action": "Get hourly forecast in Celsius",
+          "url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast/hourly?units=si"
+        }
+      ]
+    },
+    {
+      "example": "Get raw data for Houston for custom visualization",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Get grid coordinates",
+          "url": "https://api.weather.gov/points/29.7604,-95.3698",
+          "extract": "gridId: HGX, gridX: 76, gridY: 106"
+        },
+        {
+          "step": 2,
+          "action": "Get raw gridpoint data with all 50+ parameters",
+          "url": "https://api.weather.gov/gridpoints/HGX/76,106"
+        }
+      ]
+    }
+  ],
+  "major_city_quick_reference": {
+    "note": "Pre-calculated grid coordinates for major US cities - skip step 1!",
+    "cities": [
+      {
+        "city": "Kansas City, MO",
+        "coords": "39.0997,-94.5786",
+        "grid": "EAX/39,101",
+        "forecast_url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast/hourly",
+        "station": "KMCI"
+      },
+      {
+        "city": "New York, NY",
+        "coords": "40.7128,-74.0060",
+        "grid": "OKX/33,37",
+        "forecast_url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/OKX/33,37/forecast/hourly",
+        "station": "KJFK"
+      },
+      {
+        "city": "Houston, TX",
+        "coords": "29.7604,-95.3698",
+        "grid": "HGX/76,106",
+        "forecast_url": "https://api.weather.gov/gridpoints/HGX/76,106/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/HGX/76,106/forecast/hourly",
+        "station": "KIAH"
+      },
+      {
+        "city": "Los Angeles, CA",
+        "coords": "34.0522,-118.2437",
+        "grid": "LOX/154,45",
+        "forecast_url": "https://api.weather.gov/gridpoints/LOX/154,45/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/LOX/154,45/forecast/hourly",
+        "station": "KLAX"
+      },
+      {
+        "city": "Chicago, IL",
+        "coords": "41.8781,-87.6298",
+        "grid": "LOT/75,73",
+        "forecast_url": "https://api.weather.gov/gridpoints/LOT/75,73/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/LOT/75,73/forecast/hourly",
+        "station": "KORD"
+      },
+      {
+        "city": "Miami, FL",
+        "coords": "25.7617,-80.1918",
+        "grid": "MFL/110,28",
+        "forecast_url": "https://api.weather.gov/gridpoints/MFL/110,28/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/MFL/110,28/forecast/hourly",
+        "station": "KMIA"
+      },
+      {
+        "city": "Seattle, WA",
+        "coords": "47.6062,-122.3321",
+        "grid": "SEW/124,67",
+        "forecast_url": "https://api.weather.gov/gridpoints/SEW/124,67/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/SEW/124,67/forecast/hourly",
+        "station": "KSEA"
+      },
+      {
+        "city": "Phoenix, AZ",
+        "coords": "33.4484,-112.0740",
+        "grid": "PSR/156,77",
+        "forecast_url": "https://api.weather.gov/gridpoints/PSR/156,77/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/PSR/156,77/forecast/hourly",
+        "station": "KPHX"
+      },
+      {
+        "city": "Denver, CO",
+        "coords": "39.7392,-104.9903",
+        "grid": "BOU/62,61",
+        "forecast_url": "https://api.weather.gov/gridpoints/BOU/62,61/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/BOU/62,61/forecast/hourly",
+        "station": "KDEN"
+      },
+      {
+        "city": "Boston, MA",
+        "coords": "42.3601,-71.0589",
+        "grid": "BOX/71,90",
+        "forecast_url": "https://api.weather.gov/gridpoints/BOX/71,90/forecast",
+        "hourly_url": "https://api.weather.gov/gridpoints/BOX/71,90/forecast/hourly",
+        "station": "KBOS"
+      }
+    ]
+  },
+  "common_airport_stations": {
+    "note": "Major airport weather stations for current conditions",
+    "stations": [
+      "KATL - Atlanta Hartsfield-Jackson",
+      "KBOS - Boston Logan",
+      "KBWI - Baltimore-Washington",
+      "KDEN - Denver International",
+      "KDFW - Dallas-Fort Worth",
+      "KDTW - Detroit Metropolitan",
+      "KEWR - Newark Liberty",
+      "KIAD - Washington Dulles",
+      "KIAH - Houston Bush Intercontinental",
+      "KJFK - New York JFK",
+      "KLAS - Las Vegas McCarran",
+      "KLAX - Los Angeles International",
+      "KLGA - New York LaGuardia",
+      "KMCI - Kansas City International",
+      "KMCO - Orlando International",
+      "KMDW - Chicago Midway",
+      "KMEM - Memphis International",
+      "KMIA - Miami International",
+      "KMSP - Minneapolis-St Paul",
+      "KORD - Chicago O'Hare",
+      "KPBI - Palm Beach International",
+      "KPDX - Portland International",
+      "KPHL - Philadelphia International",
+      "KPHX - Phoenix Sky Harbor",
+      "KSDF - Louisville International",
+      "KSEA - Seattle-Tacoma",
+      "KSFO - San Francisco International",
+      "KSLC - Salt Lake City International",
+      "KSTL - St Louis Lambert"
+    ]
+  },
+  "usage_tips": [
+    "CRITICAL: Always include User-Agent header in your code! Example: 'NextWeather/1.0 (contact@email.com)'",
+    "WORKFLOW: 1) /points to get grid coords → 2) /gridpoints for forecast → 3) /stations for current conditions",
+    "Copy any URL and paste directly into your browser to test (browser automatically sends User-Agent)",
+    "Grid coordinates (wfo/x,y) are REQUIRED for forecasts - must call /points first to get them",
+    "Use ?units=us for Fahrenheit/mph or ?units=si for Celsius/km/h",
+    "12-hour forecast = good for display to humans (day/night periods with text)",
+    "Hourly forecast = good for detailed hour-by-hour planning",
+    "Raw gridpoint data = good for data scientists and custom visualizations (50+ parameters)",
+    "Zone forecasts = alternative to gridpoint, covers larger areas",
+    "Observation stations use 4-letter codes starting with K (for US stations)",
+    "Times are in ISO 8601 format, usually UTC (marked with Z)",
+    "Responses are cached and update hourly or as conditions change",
+    "No API key needed (free and open), but User-Agent is REQUIRED",
+    "For coordinates, use decimal degrees: 39.0997,-94.5786 (no spaces)",
+    "Maximum limit parameter is 500 results",
+    "Forecast periods typically cover 7 days (12-hour) or 156 hours (hourly)"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "scenarios": [
+    {
+      "scenario": "What is the 7-day forecast for Kansas City?",
+      "task": "Get the standard 7-day, 12-hour period forecast.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Get grid coordinates for Kansas City.",
+          "url": "https://api.weather.gov/points/39.0997,-94.5786"
+        },
+        {
+          "step": 2,
+          "description": "Use the grid coordinates to get the 7-day forecast.",
+          "url": "https://api.weather.gov/gridpoints/EAX/39,101/forecast",
+          "note": "The grid 'EAX/39,101' is extracted from the previous step. Alternatively, you can use the 'major_city_quick_reference' for a direct URL."
+        }
+      ]
+    },
+    {
+      "scenario": "Can you give me the hourly forecast for the next 2 hours in Houston, TX?",
+      "task": "Get the hour-by-hour forecast for a specific location.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Use the pre-calculated grid for Houston to get the hourly forecast.",
+          "url": "https://api.weather.gov/gridpoints/HGX/76,106/forecast/hourly",
+          "note": "This returns a multi-hour forecast. The client application would then filter for the next 2 hours."
+        }
+      ]
+    },
+    {
+      "scenario": "What's the current temperature in Miami in Celsius?",
+      "task": "Get current conditions and convert to metric units.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Get the latest observation from the primary station for Miami (KMIA).",
+          "url": "https://api.weather.gov/stations/KMIA/observations/latest",
+          "note": "The response contains temperature in both Celsius and Fahrenheit if available. If not, the client would need to check the unit code and convert if necessary. The API does not have a 'units=si' parameter for observations."
+        }
+      ]
+    },
+    {
+      "scenario": "I need all the raw forecast data for Denver for a data science project.",
+      "task": "Get the complete, raw, numerical gridpoint data.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Get the raw gridpoint data for Denver using its pre-calculated grid.",
+          "url": "https://api.weather.gov/gridpoints/BOU/62,61",
+          "note": "This endpoint provides 50+ detailed parameters like temperature, dewpoint, wind components, precipitation potential, snow amount, etc."
+        }
+      ]
+    },
+    {
+      "scenario": "What were the weather conditions at JFK airport in New York yesterday?",
+      "task": "Get historical observations for a specific station over a time range.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Fetch observations for station KJFK for a specific 24-hour period.",
+          "url": "https://api.weather.gov/stations/KJFK/observations?start=2025-11-23T00:00:00Z&end=2025-11-24T23:59:59Z",
+          "note": "The dates need to be adjusted by the client application to reflect 'yesterday'."
+        }
+      ]
+    },
+    {
+      "scenario": "List all the weather stations in Texas.",
+      "task": "Search for all observation stations in a given state.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Query the stations endpoint filtering by state.",
+          "url": "https://api.weather.gov/stations?state=TX",
+          "note": "The result might be paginated. Use the 'limit' parameter (e.g., '?limit=500') to get more results at once."
+        }
+      ]
+    },
+    {
+      "scenario": "Is there a tornado warning for my current location (lat: 39.0, lon: -94.5)?",
+      "task": "Check for active alerts for a specific point.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Get active alerts for a specific point.",
+          "url": "https://api.weather.gov/alerts/active?point=39,-94.5",
+          "note": "The user would need to provide their coordinates. The response will be a GeoJSON feature collection of active alerts. The client application would then check if any of the alerts have 'event: Tornado Warning'."
+        }
+      ]
+    },
+    {
+      "scenario": "What's the forecast for Manhattan?",
+      "task": "Get a forecast for a well-defined zone instead of a grid.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "Get the forecast for the Manhattan forecast zone.",
+          "url": "https://api.weather.gov/zones/forecast/NYZ072/forecast",
+          "note": "This is an alternative to the gridpoint method and is useful for larger, named areas."
+        }
+      ]
+    },
+    {
+      "scenario": "Find me the closest weather station to this point: 47.6,-122.3",
+      "task": "Find nearby observation stations for a given coordinate.",
+      "api_calls": [
+        {
+          "step": 1,
+          "description": "First, get the gridpoint information for the coordinates.",
+          "url": "https://api.weather.gov/points/47.6,-122.3"
+        },
+        {
+          "step": 2,
+          "description": "Use the gridpoint (e.g., SEW/124,67) to find a list of nearby stations.",
+          "url": "https://api.weather.gov/gridpoints/SEW/124,67/stations",
+          "note": "The response will list stations, which can then be used to get current conditions."
+        }
+      ]
+    }
+  ]
+}

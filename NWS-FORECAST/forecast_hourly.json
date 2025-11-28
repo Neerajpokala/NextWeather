@@ -1,0 +1,131 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "unit": "http://codes.wmo.int/common/unit/",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -94.5585,
+                    39.0942
+                ],
+                [
+                    -94.5584,
+                    39.1163
+                ],
+                [
+                    -94.5869,
+                    39.1164
+                ],
+                [
+                    -94.587,
+                    39.0942
+                ],
+                [
+                    -94.5585,
+                    39.0942
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "units": "us",
+        "forecastGenerator": "HourlyForecastGenerator",
+        "generatedAt": "2025-11-28T06:06:16+00:00",
+        "updateTime": "2025-11-28T05:06:25+00:00",
+        "validTimes": "2025-11-27T23:00:00+00:00/P7DT5H",
+        "elevation": {
+            "unitCode": "wmoUnit:m",
+            "value": 274.0152
+        },
+        "periods": [
+            {
+                "number": 1,
+                "name": "",
+                "startTime": "2025-11-28T00:00:00-06:00",
+                "endTime": "2025-11-28T01:00:00-06:00",
+                "isDaytime": false,
+                "temperature": 31,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 0
+                },
+                "dewpoint": {
+                    "unitCode": "wmoUnit:degC",
+                    "value": -5.555555555555555
+                },
+                "relativeHumidity": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 69
+                },
+                "windSpeed": "3 mph",
+                "windDirection": "N",
+                "icon": "https://api.weather.gov/icons/land/night/sct?size=small",
+                "shortForecast": "Partly Cloudy",
+                "detailedForecast": ""
+            },
+            {
+                "number": 2,
+                "name": "",
+                "startTime": "2025-11-28T01:00:00-06:00",
+                "endTime": "2025-11-28T02:00:00-06:00",
+                "isDaytime": false,
+                "temperature": 30,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 0
+                },
+                "dewpoint": {
+                    "unitCode": "wmoUnit:degC",
+                    "value": -5.555555555555555
+                },
+                "relativeHumidity": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 72
+                },
+                "windSpeed": "3 mph",
+                "windDirection": "NNE",
+                "icon": "https://api.weather.gov/icons/land/night/sct?size=small",
+                "shortForecast": "Partly Cloudy",
+                "detailedForecast": ""
+            },
+            {
+                "number": 3,
+                "name": "",
+                "startTime": "2025-11-28T02:00:00-06:00",
+                "endTime": "2025-11-28T03:00:00-06:00",
+                "isDaytime": false,
+                "temperature": 29,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 0
+                },
+                "dewpoint": {
+                    "unitCode": "wmoUnit:degC",
+                    "value": -5.555555555555555
+                },
+                "relativeHumidity": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 75
+                },
+                "windSpeed": "3 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/night/few?size=small",
+                "shortForecast": "Mostly Clear",
+                "detailedForecast": ""
+            },

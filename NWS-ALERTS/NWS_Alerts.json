@@ -1,0 +1,425 @@
+{
+  "api_name": "National Weather Service API - Test URLs",
+  "base_url": "https://api.weather.gov/alerts",
+  "note": "Copy any URL below and paste in your browser to test the API",
+  "test_urls_by_parameter": [
+    {
+      "parameter": "No parameters (All alerts)",
+      "url": "https://api.weather.gov/alerts",
+      "description": "Returns all alerts without any filter"
+    },
+    {
+      "parameter": "status",
+      "urls": [
+        {
+          "value": "actual",
+          "url": "https://api.weather.gov/alerts?status=actual",
+          "description": "Get only actual alerts (not test or exercise)"
+        },
+        {
+          "value": "exercise",
+          "url": "https://api.weather.gov/alerts?status=exercise",
+          "description": "Get only exercise alerts"
+        },
+        {
+          "value": "system",
+          "url": "https://api.weather.gov/alerts?status=system",
+          "description": "Get only system alerts"
+        },
+        {
+          "value": "test",
+          "url": "https://api.weather.gov/alerts?status=test",
+          "description": "Get only test alerts"
+        },
+        {
+          "value": "draft",
+          "url": "https://api.weather.gov/alerts?status=draft",
+          "description": "Get only draft alerts"
+        }
+      ]
+    },
+    {
+      "parameter": "message_type",
+      "urls": [
+        {
+          "value": "alert",
+          "url": "https://api.weather.gov/alerts?message_type=alert",
+          "description": "Get only initial alert messages"
+        },
+        {
+          "value": "update",
+          "url": "https://api.weather.gov/alerts?message_type=update",
+          "description": "Get only update messages"
+        },
+        {
+          "value": "cancel",
+          "url": "https://api.weather.gov/alerts?message_type=cancel",
+          "description": "Get only cancellation messages"
+        }
+      ]
+    },
+    {
+      "parameter": "severity",
+      "urls": [
+        {
+          "value": "Extreme",
+          "url": "https://api.weather.gov/alerts?severity=Extreme",
+          "description": "Get only extreme severity alerts (e.g., Tornado Emergency)"
+        },
+        {
+          "value": "Severe",
+          "url": "https://api.weather.gov/alerts?severity=Severe",
+          "description": "Get only severe alerts (e.g., Severe Thunderstorm Warning)"
+        },
+        {
+          "value": "Moderate",
+          "url": "https://api.weather.gov/alerts?severity=Moderate",
+          "description": "Get only moderate severity alerts (e.g., Winter Weather Advisory)"
+        },
+        {
+          "value": "Minor",
+          "url": "https://api.weather.gov/alerts?severity=Minor",
+          "description": "Get only minor severity alerts"
+        },
+        {
+          "value": "Unknown",
+          "url": "https://api.weather.gov/alerts?severity=Unknown",
+          "description": "Get alerts with unknown severity"
+        }
+      ]
+    },
+    {
+      "parameter": "urgency",
+      "urls": [
+        {
+          "value": "Immediate",
+          "url": "https://api.weather.gov/alerts?urgency=Immediate",
+          "description": "Get alerts requiring immediate action"
+        },
+        {
+          "value": "Expected",
+          "url": "https://api.weather.gov/alerts?urgency=Expected",
+          "description": "Get alerts where response is expected soon"
+        },
+        {
+          "value": "Future",
+          "url": "https://api.weather.gov/alerts?urgency=Future",
+          "description": "Get alerts for future events"
+        },
+        {
+          "value": "Past",
+          "url": "https://api.weather.gov/alerts?urgency=Past",
+          "description": "Get alerts for past events"
+        },
+        {
+          "value": "Unknown",
+          "url": "https://api.weather.gov/alerts?urgency=Unknown",
+          "description": "Get alerts with unknown urgency"
+        }
+      ]
+    },
+    {
+      "parameter": "certainty",
+      "urls": [
+        {
+          "value": "Observed",
+          "url": "https://api.weather.gov/alerts?certainty=Observed",
+          "description": "Get alerts for observed events"
+        },
+        {
+          "value": "Likely",
+          "url": "https://api.weather.gov/alerts?certainty=Likely",
+          "description": "Get alerts where event is likely to occur"
+        },
+        {
+          "value": "Possible",
+          "url": "https://api.weather.gov/alerts?certainty=Possible",
+          "description": "Get alerts where event is possible"
+        },
+        {
+          "value": "Unlikely",
+          "url": "https://api.weather.gov/alerts?certainty=Unlikely",
+          "description": "Get alerts where event is unlikely"
+        },
+        {
+          "value": "Unknown",
+          "url": "https://api.weather.gov/alerts?certainty=Unknown",
+          "description": "Get alerts with unknown certainty"
+        }
+      ]
+    },
+    {
+      "parameter": "region",
+      "urls": [
+        {
+          "value": "AL",
+          "url": "https://api.weather.gov/alerts?region=AL",
+          "description": "Get alerts for Alaska waters"
+        },
+        {
+          "value": "AT",
+          "url": "https://api.weather.gov/alerts?region=AT",
+          "description": "Get alerts for Atlantic Ocean"
+        },
+        {
+          "value": "GL",
+          "url": "https://api.weather.gov/alerts?region=GL",
+          "description": "Get alerts for Great Lakes"
+        },
+        {
+          "value": "GM",
+          "url": "https://api.weather.gov/alerts?region=GM",
+          "description": "Get alerts for Gulf of Mexico"
+        },
+        {
+          "value": "PA",
+          "url": "https://api.weather.gov/alerts?region=PA",
+          "description": "Get alerts for Pacific Ocean"
+        },
+        {
+          "value": "PI",
+          "url": "https://api.weather.gov/alerts?region=PI",
+          "description": "Get alerts for Central/Western Pacific"
+        }
+      ]
+    },
+    {
+      "parameter": "region_type",
+      "urls": [
+        {
+          "value": "land",
+          "url": "https://api.weather.gov/alerts?region_type=land",
+          "description": "Get only land-based alerts"
+        },
+        {
+          "value": "marine",
+          "url": "https://api.weather.gov/alerts?region_type=marine",
+          "description": "Get only marine alerts"
+        }
+      ]
+    },
+    {
+      "parameter": "area",
+      "urls": [
+        {
+          "value": "TX",
+          "url": "https://api.weather.gov/alerts?area=TX",
+          "description": "Get alerts for Texas"
+        },
+        {
+          "value": "CA",
+          "url": "https://api.weather.gov/alerts?area=CA",
+          "description": "Get alerts for California"
+        },
+        {
+          "value": "FL",
+          "url": "https://api.weather.gov/alerts?area=FL",
+          "description": "Get alerts for Florida"
+        },
+        {
+          "value": "NY",
+          "url": "https://api.weather.gov/alerts?area=NY",
+          "description": "Get alerts for New York"
+        },
+        {
+          "value": "OK",
+          "url": "https://api.weather.gov/alerts?area=OK",
+          "description": "Get alerts for Oklahoma"
+        },
+        {
+          "value": "KS",
+          "url": "https://api.weather.gov/alerts?area=KS",
+          "description": "Get alerts for Kansas"
+        },
+        {
+          "value": "CO",
+          "url": "https://api.weather.gov/alerts?area=CO",
+          "description": "Get alerts for Colorado"
+        }
+      ]
+    },
+    {
+      "parameter": "point",
+      "urls": [
+        {
+          "value": "39.7456,-97.0892",
+          "url": "https://api.weather.gov/alerts?point=39.7456,-97.0892",
+          "description": "Get alerts for Kansas City area (latitude,longitude)"
+        },
+        {
+          "value": "40.7128,-74.0060",
+          "url": "https://api.weather.gov/alerts?point=40.7128,-74.0060",
+          "description": "Get alerts for New York City (latitude,longitude)"
+        },
+        {
+          "value": "29.7604,-95.3698",
+          "url": "https://api.weather.gov/alerts?point=29.7604,-95.3698",
+          "description": "Get alerts for Houston, TX (latitude,longitude)"
+        },
+        {
+          "value": "34.0522,-118.2437",
+          "url": "https://api.weather.gov/alerts?point=34.0522,-118.2437",
+          "description": "Get alerts for Los Angeles, CA (latitude,longitude)"
+        }
+      ]
+    },
+    {
+      "parameter": "event",
+      "urls": [
+        {
+          "value": "Tornado Warning",
+          "url": "https://api.weather.gov/alerts?event=Tornado%20Warning",
+          "description": "Get only Tornado Warning alerts"
+        },
+        {
+          "value": "Severe Thunderstorm Warning",
+          "url": "https://api.weather.gov/alerts?event=Severe%20Thunderstorm%20Warning",
+          "description": "Get only Severe Thunderstorm Warning alerts"
+        },
+        {
+          "value": "Flash Flood Warning",
+          "url": "https://api.weather.gov/alerts?event=Flash%20Flood%20Warning",
+          "description": "Get only Flash Flood Warning alerts"
+        },
+        {
+          "value": "Winter Storm Warning",
+          "url": "https://api.weather.gov/alerts?event=Winter%20Storm%20Warning",
+          "description": "Get only Winter Storm Warning alerts"
+        },
+        {
+          "value": "Hurricane Warning",
+          "url": "https://api.weather.gov/alerts?event=Hurricane%20Warning",
+          "description": "Get only Hurricane Warning alerts"
+        },
+        {
+          "value": "Heat Advisory",
+          "url": "https://api.weather.gov/alerts?event=Heat%20Advisory",
+          "description": "Get only Heat Advisory alerts"
+        },
+        {
+          "value": "Flood Watch",
+          "url": "https://api.weather.gov/alerts?event=Flood%20Watch",
+          "description": "Get only Flood Watch alerts"
+        },
+        {
+          "value": "Red Flag Warning",
+          "url": "https://api.weather.gov/alerts?event=Red%20Flag%20Warning",
+          "description": "Get only Red Flag Warning alerts"
+        }
+      ]
+    },
+    {
+      "parameter": "code",
+      "urls": [
+        {
+          "value": "TOR",
+          "url": "https://api.weather.gov/alerts?code=TOR",
+          "description": "Get Tornado Warning alerts by code"
+        },
+        {
+          "value": "SVR",
+          "url": "https://api.weather.gov/alerts?code=SVR",
+          "description": "Get Severe Thunderstorm Warning alerts by code"
+        },
+        {
+          "value": "FFW",
+          "url": "https://api.weather.gov/alerts?code=FFW",
+          "description": "Get Flash Flood Warning alerts by code"
+        },
+        {
+          "value": "WSW",
+          "url": "https://api.weather.gov/alerts?code=WSW",
+          "description": "Get Winter Storm Warning alerts by code"
+        }
+      ]
+    },
+    {
+      "parameter": "limit",
+      "urls": [
+        {
+          "value": "10",
+          "url": "https://api.weather.gov/alerts?limit=10",
+          "description": "Get only first 10 alerts"
+        },
+        {
+          "value": "50",
+          "url": "https://api.weather.gov/alerts?limit=50",
+          "description": "Get only first 50 alerts"
+        },
+        {
+          "value": "100",
+          "url": "https://api.weather.gov/alerts?limit=100",
+          "description": "Get only first 100 alerts"
+        }
+      ]
+    }
+  ],
+  "combination_examples": [
+    {
+      "description": "Extreme severity alerts in Texas",
+      "url": "https://api.weather.gov/alerts?area=TX&severity=Extreme"
+    },
+    {
+      "description": "Active tornado warnings",
+      "url": "https://api.weather.gov/alerts?event=Tornado%20Warning&status=actual"
+    },
+    {
+      "description": "Severe thunderstorms in Kansas City area",
+      "url": "https://api.weather.gov/alerts?point=39.7456,-97.0892&event=Severe%20Thunderstorm%20Warning"
+    },
+    {
+      "description": "Marine alerts in Gulf of Mexico with high severity",
+      "url": "https://api.weather.gov/alerts?region=GM&severity=Severe"
+    },
+    {
+      "description": "Immediate urgency alerts in California, limited to 20 results",
+      "url": "https://api.weather.gov/alerts?area=CA&urgency=Immediate&limit=20"
+    },
+    {
+      "description": "All flood-related warnings (multiple event types)",
+      "url": "https://api.weather.gov/alerts?event=Flood%20Warning&event=Flash%20Flood%20Warning&event=Flood%20Watch"
+    }
+  ],
+  "other_endpoints": [
+    {
+      "name": "Active Alerts Only",
+      "url": "https://api.weather.gov/alerts/active",
+      "description": "Returns only currently active alerts (recommended over using ?active=true)"
+    },
+    {
+      "name": "Active Alerts Count",
+      "url": "https://api.weather.gov/alerts/active/count",
+      "description": "Returns count of active alerts by region/area/zone"
+    },
+    {
+      "name": "Alert Types List",
+      "url": "https://api.weather.gov/alerts/types",
+      "description": "Returns list of all possible alert event types"
+    },
+    {
+      "name": "Alerts by Zone Example",
+      "url": "https://api.weather.gov/alerts/active/zone/KSC091",
+      "description": "Returns active alerts for Johnson County, Kansas"
+    },
+    {
+      "name": "Alerts by Area Example",
+      "url": "https://api.weather.gov/alerts/active/area/TX",
+      "description": "Returns all active alerts in Texas"
+    },
+    {
+      "name": "Alerts by Region Example",
+      "url": "https://api.weather.gov/alerts/active/region/GM",
+      "description": "Returns all active alerts in Gulf of Mexico"
+    }
+  ],
+  "usage_tips": [
+    "Copy any URL and paste directly into your browser address bar",
+    "The API returns JSON by default - your browser will display it",
+    "You can combine multiple parameters with & (e.g., ?area=TX&severity=Extreme)",
+    "For array parameters, repeat the parameter name (e.g., ?area=TX&area=OK)",
+    "URL encode spaces in event names (space = %20)",
+    "All times should be in ISO 8601 format for start/end parameters",
+    "Maximum limit is 500 results per request",
+    "Use cursor parameter from response for pagination"
+  ]
+}

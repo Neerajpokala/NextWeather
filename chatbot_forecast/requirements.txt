@@ -1,0 +1,7 @@
+dash
+dash-bootstrap-components
+google-generativeai
+python-dotenv
+requests
+pandas
+isodate

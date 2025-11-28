@@ -1,0 +1,118 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "geo": "http://www.opengis.net/ont/geosparql#",
+            "unit": "http://codes.wmo.int/common/unit/",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -94.5585,
+                    39.0942
+                ],
+                [
+                    -94.5584,
+                    39.1163
+                ],
+                [
+                    -94.5869,
+                    39.1164
+                ],
+                [
+                    -94.587,
+                    39.0942
+                ],
+                [
+                    -94.5585,
+                    39.0942
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "units": "us",
+        "forecastGenerator": "BaselineForecastGenerator",
+        "generatedAt": "2025-11-28T06:07:29+00:00",
+        "updateTime": "2025-11-28T05:06:25+00:00",
+        "validTimes": "2025-11-27T23:00:00+00:00/P7DT5H",
+        "elevation": {
+            "unitCode": "wmoUnit:m",
+            "value": 274.0152
+        },
+        "periods": [
+            {
+                "number": 1,
+                "name": "Overnight",
+                "startTime": "2025-11-28T00:00:00-06:00",
+                "endTime": "2025-11-28T06:00:00-06:00",
+                "isDaytime": false,
+                "temperature": 27,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 3
+                },
+                "windSpeed": "5 mph",
+                "windDirection": "NE",
+                "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                "shortForecast": "Partly Cloudy",
+                "detailedForecast": "Partly cloudy, with a low around 27. Northeast wind around 5 mph."
+            },
+            {
+                "number": 2,
+                "name": "Friday",
+                "startTime": "2025-11-28T06:00:00-06:00",
+                "endTime": "2025-11-28T18:00:00-06:00",
+                "isDaytime": true,
+                "temperature": 41,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 11
+                },
+                "windSpeed": "3 to 12 mph",
+                "windDirection": "ESE",
+                "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+                "shortForecast": "Mostly Cloudy",
+                "detailedForecast": "Mostly cloudy, with a high near 41. East southeast wind 3 to 12 mph, with gusts as high as 21 mph."
+            },
+            {
+                "number": 3,
+                "name": "Friday Night",
+                "startTime": "2025-11-28T18:00:00-06:00",
+                "endTime": "2025-11-29T06:00:00-06:00",
+                "isDaytime": false,
+                "temperature": 38,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
+                    "value": 94
+                },
+                "windSpeed": "10 mph",
+                "windDirection": "SE",
+                "icon": "https://api.weather.gov/icons/land/night/snow,60/snow,90?size=medium",
+                "shortForecast": "Rain And Snow",
+                "detailedForecast": "Rain and snow after 7pm. Cloudy, with a low around 38. Southeast wind around 10 mph, with gusts as high as 18 mph. Chance of precipitation is 90%. New rainfall amounts between a tenth and quarter of an inch possible."
+            },
+            {
+                "number": 4,
+                "name": "Saturday",
+                "startTime": "2025-11-29T06:00:00-06:00",
+                "endTime": "2025-11-29T18:00:00-06:00",
+                "isDaytime": true,
+                "temperature": 41,
+                "temperatureUnit": "F",
+                "temperatureTrend": null,
+                "probabilityOfPrecipitation": {
+                    "unitCode": "wmoUnit:percent",
